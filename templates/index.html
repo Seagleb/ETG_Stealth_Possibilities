@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Stealth Card Possibilities</h1>
+
+<p>Enter the amount of power the opponent spent on the stealth unit (Add back any cost reductions) and the influence the opponent has.</p>
+
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.unit_cost.label }} {{ form.unit_cost() }}
+  {{ form.fire.label }} {{ form.fire() }}
+  {{ form.time.label }} {{ form.time() }}
+  {{ form.justice.label }} {{ form.justice() }}
+  {{ form.primal.label }} {{ form.primal() }}
+  {{ form.shadow.label }} {{ form.shadow() }}
+  {{ form.search() }}
+</form>
+
+{% if img_list%}
+    {% for card in img_list %}
+        <img src={{ card }} alt="Stealthy" style="width: 10%; height: 10%">
+    {% endfor %}
+{% endif %}
+
+</body>
+</html>
