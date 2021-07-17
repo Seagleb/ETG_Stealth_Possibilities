@@ -1,7 +1,7 @@
 import json
 import re
 
-CARD_LIST_PATH = "F:\Development\Projects\Python\Eternal\eternal-cards.json"
+CARD_LIST_PATH = "eternal-cards.json"
 
 
 def get_all_stealth_cards():
@@ -13,11 +13,12 @@ def get_all_stealth_cards():
             self.img_url = card_info["ImageUrl"]
             self.cost = card_info["Cost"]
             self.description = card_info["CardText"]
-            self.intrigue = False
-            ## CHECK DIVISIBILITY FOR INTRIGUE % 2, whatever intrigue cost
+            self.intrigue = 0
 
             if "Intrigue" in card_info["CardText"]:
-                self.intrigue = True
+                intrigue_val = re.search("Intrigue (\d+):", card_info["CardText"])
+                if intrigue_val:
+                    self.intrigue = int(intrigue_val.group(1))
 
             if card_info["Influence"]:
                 self.influence = {
@@ -45,14 +46,29 @@ def get_all_stealth_cards():
     return all_stealth_cards
 
 
-def influence_req_met(card_influence, opponent_influence):
+def influence_req_met(card, opponent_influence):
     """Compare two influence dictionaries to see if the player covers influence cost of card"""
 
     req_met = True
     for keys in opponent_influence:
-        if card_influence[keys] > opponent_influence[keys]:
+        if card.influence[keys] > opponent_influence[keys]:
             req_met = False
+
     return req_met
+
+
+def cost_req_met(card, opponent_cost):
+    """Check if a card meets cost requirements"""
+
+    if card.intrigue:
+        if (opponent_cost - card.cost) % card.intrigue == 0:
+            return True
+
+    else:
+        if card.cost == opponent_cost:
+            return True
+
+    return False
 
 
 def list_possible_cards(all_stealth_cards, cost, opponent_influence):
@@ -61,13 +77,7 @@ def list_possible_cards(all_stealth_cards, cost, opponent_influence):
     possible_cards = list()
 
     for card in all_stealth_cards:
-        if (
-            card.cost == cost and influence_req_met(card.influence, opponent_influence)
-        ) or (
-            card.cost <= cost
-            and influence_req_met(card.influence, opponent_influence)
-            and card.intrigue
-        ):
+        if cost_req_met(card, cost) and influence_req_met(card, opponent_influence):
             possible_cards.append(card)
             print(f"Name = {card.name}")
             print(f"Cost = {card.cost}")
@@ -80,6 +90,6 @@ def list_possible_cards(all_stealth_cards, cost, opponent_influence):
 if __name__ == "__main__":
     all_stealth_cards = get_all_stealth_cards()
 
-    opponent_influence = {"F": 0, "T": 5, "J": 3, "P": 0, "S": 0}
+    opponent_influence = {"F": 3, "T": 0, "J": 0, "P": 0, "S": 0}
 
     possible_cards = list_possible_cards(all_stealth_cards, 5, opponent_influence)

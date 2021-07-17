@@ -56,15 +56,12 @@ def index():
             else:
                 opponent_influence[influence] = int(opponent_influence[influence])
 
-        print(opponent_influence)
         all_stealth_cards = possible_cards.get_all_stealth_cards()
         cards_possible = possible_cards.list_possible_cards(
             all_stealth_cards, int(unit_cost), opponent_influence
         )
-        print(cards_possible)
         form.img_list.clear()
         for card in cards_possible:
-            print(card)
             form.img_list.append(card.img_url)
 
     return render_template(
