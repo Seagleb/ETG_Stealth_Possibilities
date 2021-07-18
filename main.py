@@ -51,7 +51,7 @@ def index():
         }
 
         for influence in opponent_influence:
-            if opponent_influence[influence] is "":
+            if opponent_influence[influence] == "":
                 opponent_influence[influence] = 0
             else:
                 opponent_influence[influence] = int(opponent_influence[influence])
