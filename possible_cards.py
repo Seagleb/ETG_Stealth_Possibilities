@@ -38,7 +38,7 @@ def get_all_stealth_cards():
     data = json.loads(response.text.encode('utf8'))
     for row in data:
         try:
-            if re.search("Stealth.*;", row["CardText"]):
+            if re.search("Stealth", row["CardText"]):
                 all_stealth_cards.append(StealthCard(row))
         except KeyError:
             """Card does not contain Card Text."""
@@ -62,8 +62,9 @@ def cost_req_met(card, opponent_cost):
     """Check if a card meets cost requirements"""
 
     if card.intrigue:
-        if (opponent_cost - card.cost) % card.intrigue == 0:
-            return True
+        if (opponent_cost - card.cost) > 0:
+            if (opponent_cost - card.cost) % card.intrigue == 0:
+                return True
 
     else:
         if card.cost == opponent_cost:
