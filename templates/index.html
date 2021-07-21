@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
 <body>
-
-<h1>Stealth Card Possibilities</h1>
+<div class="content">
+  <h1>Stealth Card Possibilities</h1>
 
 <p>Enter the amount of power the opponent spent on the stealth unit (Add back any cost reductions) and the influence the opponent has.</p>
 
-<form method="POST">
+<form method="POST" class="form-style">
   {{ form.hidden_tag() }}
-  {{ form.unit_cost.label }} {{ form.unit_cost() }}
-  {{ form.fire.label }} {{ form.fire() }}
-  {{ form.time.label }} {{ form.time() }}
-  {{ form.justice.label }} {{ form.justice() }}
-  {{ form.primal.label }} {{ form.primal() }}
-  {{ form.shadow.label }} {{ form.shadow() }}
-  {{ form.search() }}
+  <div class="form-component"><div class="label">{{ form.unit_cost.label }}</div> {{ form.unit_cost() }}</div>
+  <div class="form-component"><div class="label">{{ form.fire.label }}</div> {{ form.fire() }}</div>
+  <div class="form-component"><div class="label">{{ form.time.label }}</div> {{ form.time() }}</div>
+  <div class="form-component"><div class="label">{{ form.justice.label }}</div> {{ form.justice() }}</div>
+  <div class="form-component"><div class="label">{{ form.primal.label }}</div> {{ form.primal() }}</div>
+  <div class="form-component"><div class="label">{{ form.shadow.label }}</div> {{ form.shadow() }}</div>
+  <div class="form-component"><a class="button1">{{ form.search() }}</a></div>
 </form>
 
 {% if img_list%}
     {% for card in img_list %}
-        <img src={{ card }} alt="Stealthy" style="width: 10%; height: 10%">
+        <img src={{ card }} class ="stealthImage" alt="Stealthy">
     {% endfor %}
 {% endif %}
+
+</div>
+
 
 </body>
 </html>
