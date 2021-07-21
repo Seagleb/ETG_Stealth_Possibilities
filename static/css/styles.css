@@ -45,6 +45,22 @@
     border:0.1em solid #000000;
 }
 .stealthImage{
-    width: 10%;
-    height: 10%;
+    width: 25%;
+    height: 25%;
+    margin: 0.5%;
+    margin-bottom: 9%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10%;
+}
+.stealthImage:hover{
+    width: 30%;
+    height: 30%;
+    margin-bottom: 0%;
+}
+.card-box{
+    display: flex;
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+    flex-wrap: wrap;
 }
