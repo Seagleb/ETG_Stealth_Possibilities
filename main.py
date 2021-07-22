@@ -11,12 +11,12 @@ app.config["SECRET_KEY"] = "testkey"
 
 class OpponentForm(FlaskForm):
 
-    unit_cost = StringField("Unit Cost:")
-    fire = StringField("Fire:")
-    time = StringField("Time:")
-    justice = StringField("Justice:")
-    primal = StringField("Primal:")
-    shadow = StringField("Shadow:")
+    unit_cost = StringField("Unit Cost:", render_kw={"placeholder": "Unit Cost"})
+    fire = StringField("Fire:", render_kw={"placeholder": "Fire"})
+    time = StringField("Time:", render_kw={"placeholder": "Time"})
+    justice = StringField("Justice:", render_kw={"placeholder": "Justice"})
+    primal = StringField("Primal:", render_kw={"placeholder": "Primal"})
+    shadow = StringField("Shadow:", render_kw={"placeholder": "Shadow"})
     search = SubmitField("Search")
     img_list = list()
 
