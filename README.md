@@ -167,16 +167,16 @@ Project Link: [https://github.com/Seagleb/ETG_Stealth_Possibilities](https://git
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Seagleb/repo.svg?style=flat-square
-[contributors-url]: https://github.com/Seagleb/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Seagleb/repo.svg?style=flat-square
-[forks-url]: https://github.com/Seagleb/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/Seagleb/repo.svg?style=flat-square
-[stars-url]: https://github.com/Seagleb/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Seagleb/repo.svg?style=flat-square
-[issues-url]: https://github.com/Seagleb/repo/issues
-[license-shield]: https://img.shields.io/github/license/Seagleb/repo.svg?style=flat-square
-[license-url]: https://github.com/Seagleb/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Seagleb/ETG_Stealth_Possibilities.svg?style=flat-square
+[contributors-url]: https://github.com/Seagleb/ETG_Stealth_Possibilities/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Seagleb/ETG_Stealth_Possibilities.svg?style=flat-square
+[forks-url]: https://github.com/Seagleb/ETG_Stealth_Possibilities/network/members
+[stars-shield]: https://img.shields.io/github/stars/Seagleb/ETG_Stealth_Possibilities.svg?style=flat-square
+[stars-url]: https://github.com/Seagleb/ETG_Stealth_Possibilities/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Seagleb/ETG_Stealth_Possibilities.svg?style=flat-square
+[issues-url]: https://github.com/Seagleb/ETG_Stealth_Possibilities/issues
+[license-shield]: https://img.shields.io/github/license/Seagleb/ETG_Stealth_Possibilities.svg?style=flat-square
+[license-url]: https://github.com/Seagleb/ETG_Stealth_Possibilities/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/Seagleb
 [product-screenshot]: images/screenshot.png
